@@ -15,12 +15,14 @@ export const ToolNames = {
     FIND_COMPLETED_TASKS: 'find-completed-tasks',
 
     // Project management tools
+    ADD_PROJECTS: 'add-projects',
+    UPDATE_PROJECTS: 'update-projects',
     FIND_PROJECTS: 'find-projects',
-    MANAGE_PROJECTS: 'manage-projects',
 
     // Section management tools
+    ADD_SECTIONS: 'add-sections',
+    UPDATE_SECTIONS: 'update-sections',
     FIND_SECTIONS: 'find-sections',
-    MANAGE_SECTIONS: 'manage-sections',
 
     // General tools
     GET_OVERVIEW: 'get-overview',

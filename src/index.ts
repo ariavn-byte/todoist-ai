@@ -9,12 +9,14 @@ import { findTasks } from './tools/find-tasks.js'
 import { updateTasks } from './tools/update-tasks.js'
 
 // Project management tools
+import { addProjects } from './tools/add-projects.js'
 import { findProjects } from './tools/find-projects.js'
-import { manageProjects } from './tools/manage-projects.js'
+import { updateProjects } from './tools/update-projects.js'
 
 // Section management tools
+import { addSections } from './tools/add-sections.js'
 import { findSections } from './tools/find-sections.js'
-import { manageSections } from './tools/manage-sections.js'
+import { updateSections } from './tools/update-sections.js'
 
 // General tools
 import { deleteObject } from './tools/delete-object.js'
@@ -29,11 +31,13 @@ const tools = {
     findTasksByDate,
     findCompletedTasks,
     // Project management tools
+    addProjects,
+    updateProjects,
     findProjects,
-    manageProjects,
     // Section management tools
+    addSections,
+    updateSections,
     findSections,
-    manageSections,
     // General tools
     getOverview,
     deleteObject,
@@ -50,11 +54,13 @@ export {
     findTasksByDate,
     findCompletedTasks,
     // Project management tools
+    addProjects,
+    updateProjects,
     findProjects,
-    manageProjects,
     // Section management tools
+    addSections,
+    updateSections,
     findSections,
-    manageSections,
     // General tools
     getOverview,
     deleteObject,
