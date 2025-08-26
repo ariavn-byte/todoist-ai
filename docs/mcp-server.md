@@ -85,6 +85,8 @@ Update the configuration above as follows
 
 Unfortunately, MCP host applications do not yet support connecting to an MCP server hosted via HTTP. There's a workaround to run them through a bridge that exposes them locally via Standard I/O.
 
+### Local Development
+
 Start by running the service via a web server. You can do it locally like this:
 
 ```sh
@@ -107,3 +109,25 @@ This will expose the service at the URL http://localhost:8080/mcp. You can now c
 
 > [!NOTE]
 > You may also need to change the command, passing the full path to your `npx` binary, depending one how you installed `node`.
+
+### Remote Deployment
+
+You can also deploy this server to any hosting service that supports Node.js (e.g., Heroku, Render, Fly.io, etc.).
+
+1.  **Deploy the application.** Make sure to set the `TODOIST_API_KEY` environment variable in your hosting environment.
+2.  **Start the server.** The service should be started with `npm run start:http`. Your hosting provider will likely detect the `start` script in `package.json`, so you might need to configure it to use `start:http` instead.
+3.  **Get the public URL.** Once deployed, your hosting provider will give you a public URL for your server, for example `https://your-app-name.herokuapp.com`. The MCP endpoint will be at `/mcp` on that URL.
+
+Then, configure your MCP client to connect to the remote server using the `mcp-remote` bridge, similar to the local setup:
+
+```json
+{
+	"mcpServers": {
+		"todoist-mcp-remote": {
+            "type": "stdio",
+			"command": "npx",
+			"args": ["mcp-remote", "https://your-app-name.herokuapp.com/mcp"]
+		}
+	}
+}
+```
